@@ -2,20 +2,20 @@ package main
 
 import "fmt"
 
-func main() {
+func fibo(ord int) int {
 	var (
-		fnum1, fnum2 = 0, 1
-	    n int = 10
-	    i, fnumN int
+		f0    int = 0
+		f1    int = 1
+		f_ord int
 	)
-
-	for i = 0; i <= n; i++ {
-        fnumN = fnum1
-        fnum1 = fnum2
-        fnum2 = fnum1 + fnumN
-
-        fmt.Println(i, "; ", fnumN)
+	for i := 0; i <= ord; i++ {
+		f_ord = f0
+		f0 = f1
+		f1 = f0 + f_ord
 	}
-
-	fmt.Printf("\n%d - fibonacci number is %d", n, fnumN)
+	return f_ord
+}
+func main() {
+	var numOrder int = 10
+	fmt.Println(fibo(numOrder))
 }
