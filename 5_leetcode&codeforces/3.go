@@ -12,21 +12,18 @@ func main() {
 }
 
 func lengthOfLongestSubstring(s string) int {
-	var chars [128]rune
-	fmt.Println(len(chars))
-	var left = 0
-	var right = 0
+	var (
+		chars            [128]rune
+		left, right, res int
+	)
 
-	var res = 0
 	for right < len(s) {
 		r := s[right]
 		chars[r]++
-		fmt.Println(chars[r], r)
 
 		for chars[r] > 1 {
 			l := s[left]
 			chars[l]--
-			fmt.Println(chars[l], l)
 			left++
 		}
 		if res < right-left+1 {
