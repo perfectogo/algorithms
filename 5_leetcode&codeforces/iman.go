@@ -47,3 +47,4 @@ func bye(channel chan []int, numbers []int, wg *sync.WaitGroup) {
 	}
 	channel <- numbers1
 }
+// test
